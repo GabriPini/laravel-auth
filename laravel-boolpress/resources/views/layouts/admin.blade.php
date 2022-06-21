@@ -20,6 +20,20 @@
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 </head>
 <body>
+    @if (Route::has('login'))
+    <div class="top-right links">
+        @auth
+            <a href="{{ url('/admin') }}">Home</a>
+        @else
+            <a href="{{ route('login') }}">Login</a>
+
+            @if (Route::has('register'))
+                <a href="{{ route('register') }}">Register</a>
+            @endif
+        @endauth
+    </div>
+@endif
+
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Company name</a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -80,9 +94,5 @@
           </main>
         </div>
       </div>
-
-
-
-
 </body>
 </html>

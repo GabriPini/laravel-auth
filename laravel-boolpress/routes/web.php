@@ -20,7 +20,7 @@ Route::middleware('auth')->prefix('admin')->namespace('Admin')->name('admin.')->
     //admin dashboard
     Route::get('/', 'HomeController@index')->name('dashboard');//admin.dashboard
 
-
+    Route::resource('posts','PostController');
 });
 
 
