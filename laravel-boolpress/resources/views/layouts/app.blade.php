@@ -34,6 +34,6 @@
     </div>
 @endif
 
- @yield('content')
+ @yield('app')
 </body>
 </html>
