@@ -51,13 +51,13 @@
                 <div class="sidebar-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{ route('admin.dashboard') }}">
-                                Dashboard <span class="sr-only">(current)</span>
+                            <a class="nav-link {{Route::currentRouteName() === 'admin.dashboard' ? 'active' : '' }}" href="{{ route('admin.dashboard') }}">
+                                Dashboard <span class="sr-only {{Route::currentRouteName() !== 'admin.dashboard' ? 'd-none' : '' }}"">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('admin.posts.index') }}">
-                                Posts
+                            <a class="nav-link {{Route::currentRouteName() === 'admin.posts.index' ? 'active' : '' }}" href="{{ route('admin.posts.index') }}">
+                                Posts  <span class="sr-only {{Route::currentRouteName() !== 'admin.posts.index' ? 'd-none' : '' }}"">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
