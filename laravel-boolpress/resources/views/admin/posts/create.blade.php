@@ -10,7 +10,7 @@
 
 <div class="Form-group">
   <label for="title" >Title</label>
-  <input type="text" name="title" id="title" class="form-control" placeholder="Learn phhp article" aria-describedby="titleHelper">
+  <input type="text" name="title" id="title" class="form-control" placeholder="Learn phhp article" aria-describedby="titleHelper" value="{{old ('title')}}">
   <small id="titleHelper" class="text-muted">max carachters 150</small>
 </div>
 

@@ -2,6 +2,20 @@
 
 @section('content')
     <div class="container">
+        <div class="d-flex justify-content-between my-4">
+
+            <h2>Post List</h2>
+
+            <div class="">
+                <a name="" id="" class="btn btn-primary" href="{{route('admin.posts.create')}}" role="button">Crate Post</a>
+            </div>
+        </div>
+
+        @if(session('message'))
+        <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+
+        @endif
+
         <table class="table table-striped table-inverse table-responsive">
             <thead class="thead-inverse">
                 <tr>
