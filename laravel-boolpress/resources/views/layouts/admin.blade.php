@@ -32,7 +32,7 @@
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
 
-                <a class="dropdown-item" href="{{ route('logout') }}"
+                <a class="dropdown-item text-danger fw-bold" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
             document.getElementById('logout-form').submit();">
                     {{ __('Logout') }}
