@@ -4,9 +4,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PostRequest;
 use App\Models\Post;
-use Illuminate\Http\Request;
-use Illuminate\Support\Str;
-
 class PostController extends Controller
 {
     /**
@@ -43,7 +40,7 @@ class PostController extends Controller
     {
         //
         $val_data = $request->validated();
-        $slug = Str::slug($request->title,'-');
+        $slug = Post::generateSlug($request->title);
         $val_data['slug'] = $slug;
 
         Post::create($val_data);
@@ -86,6 +83,11 @@ class PostController extends Controller
     {
         //
         $val_data = $request->validated();
+
+        $slug = Post::generateSlug($request->title);
+        // old slug version
+       /*  $slug = Str::slug($request->title,'-'); */
+        $val_data['slug'] = $slug;
 
         $post->update($val_data);
         return redirect()->route('admin.posts.index');

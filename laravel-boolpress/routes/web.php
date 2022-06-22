@@ -20,8 +20,12 @@ Route::middleware('auth')->prefix('admin')->namespace('Admin')->name('admin.')->
     //admin dashboard
     Route::get('/', 'HomeController@index')->name('dashboard');//admin.dashboard
 
-    Route::resource('posts','PostController');
+    Route::resource('posts','PostController')->parameters([
+        'posts' => 'post:slug'
+    ]);
 });
+
+
 
 
 
@@ -29,3 +33,11 @@ Route::middleware('auth')->prefix('admin')->namespace('Admin')->name('admin.')->
 Route::get("{any?}", function(){
     return view('guest.home');
 })->where("any",".*");
+
+
+/*
+-close registation
+-Model: Category + Table : categories + Controller: Admin/CategoryController + one to many
+-Model: Tag + Table : tagss + Controller: Admin/TagController + many to many
+
+*/

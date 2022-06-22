@@ -34,7 +34,7 @@
                         <td>{{ $post->slug }}</td>
                         <td><img width="150" src="{{ $post->cover_image }}" alt="Cover Image {{ $post->title }}"></td>
                         <td>
-                            <a class="btn btn-primary" href="{{ route('admin.posts.show', ['post' => $post->id]) }}"><svg
+                            <a class="btn btn-primary" href="{{ route('admin.posts.show', ['post' => $post->slug]) }}"><svg
                                     xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-eye-fill" viewBox="0 0 16 16">
                                     <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
@@ -54,8 +54,8 @@
 
 
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-danger" data-toggle="modal"
-                                data-target="#delete-post-{{ $post->id }}">
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                data-bs-target="#delete-post-{{ $post->id }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                     <path
@@ -70,9 +70,7 @@
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title">Delete post {{ $post->title }}</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                              </button>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
                                             <div class="container-fluid">
@@ -80,10 +78,9 @@
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
-                                            <form action="{{ route('admin.posts.destroy', $post->id) }}" method="post">
+                                            <form action="{{ route('admin.posts.destroy', $post->slug) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button class="btn btn-danger" type="submit">Delete</button>

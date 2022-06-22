@@ -11,7 +11,7 @@
 <h1 class="text-center">Edit {{$post->title}}</h1>
     @include('partials.error')
 
-        <form class="mt-5 text-center " action="{{ route('admin.posts.update', $post )}}" method="POST">
+        <form class="mt-5 text-center " action="{{ route('admin.posts.update', $post->slug )}}" method="POST">
 
             @method('PATCH')
             @csrf
