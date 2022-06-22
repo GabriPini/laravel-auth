@@ -8,7 +8,7 @@
 
 
     <div class="mt-4 container bg-white d-flex align-items-center">
-        <img class="me-3" src="{{$post->cover_image}}" width="200" alt="">
+        <img class="me-3" src="{{$post->cover_image}}" width="250" alt="">
         <div class="post-body">
             <h3>{{$post->title}}</h3>
             <p>{{$post->content}}</p>

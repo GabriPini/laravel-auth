@@ -19,8 +19,8 @@
         <table class="table table-striped table-inverse table-responsive">
             <thead class="thead-inverse">
                 <tr>
-                    <th>ID</th>
                     <th>Title</th>
+                    <th>ID</th>
                     <th>Slug</th>
                     <th>Cover Image</th>
                     <th>Actions</th>
