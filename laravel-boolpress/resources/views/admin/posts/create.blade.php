@@ -4,7 +4,7 @@
 
 
 <h2>Crate new post</h2>
-
+@include('partials.error')
 <form action="{{route('admin.posts.store')}}" method="post">
 @csrf
 

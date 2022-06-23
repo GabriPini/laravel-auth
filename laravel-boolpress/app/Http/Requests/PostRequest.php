@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Requests;
-
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class PostRequest extends FormRequest
@@ -23,10 +23,10 @@ class PostRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'title' => 'required|unique:posts|max:255',
-            'cover_image' => 'nullable',
-            'content' => 'nullable',
-        ];
+           return [
+                'title' => ['required', Rule::unique('posts', 'title')->ignore($this->post), 'max:150'],
+                'content'=>['nullable'],
+                'cover_image'=>['nullable']
+            ];
     }
 }
