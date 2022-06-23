@@ -52,17 +52,17 @@
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <a class="nav-link {{Route::currentRouteName() === 'admin.dashboard' ? 'active' : '' }}" href="{{ route('admin.dashboard') }}">
-                                Dashboard <span class="sr-only {{Route::currentRouteName() !== 'admin.dashboard' ? 'd-none' : '' }}"">(current)</span>
+                                Dashboard <span class="sr-only {{Route::currentRouteName() !== 'admin.dashboard' ? 'd-none' : '' }}">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{Route::currentRouteName() === 'admin.posts.index' ? 'active' : '' }}" href="{{ route('admin.posts.index') }}">
-                                Posts  <span class="sr-only {{Route::currentRouteName() !== 'admin.posts.index' ? 'd-none' : '' }}"">(current)</span>
+                                Posts  <span class="sr-only {{Route::currentRouteName() !== 'admin.posts.index' ? 'd-none' : '' }}">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                Category
+                            <a class="nav-link{{Route::currentRouteName() === 'admin.categories.index' ? 'active ps-3' : '' }}" href="{{ route('admin.categories.index') }}">
+                                Categories <span class="sr-only {{Route::currentRouteName() !== 'admin.categories.index' ? 'd-none' : '' }}">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
