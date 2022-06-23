@@ -37,6 +37,28 @@
 
                 </div>
             </div>
+
+            <div class="p-2">
+                <label for="category_id" class="form-label">Categories</label>
+                <select class="form-control
+                @error('cover_image') is-invalid @enderror" name="category_id" id="category_id">
+                  <option value="">Select a category</option>
+
+                  @foreach ($categories as $category)
+                        {{--bug to solve when post with no id  --}}
+                  <option value="{{$category->id}}"
+                   {{$category->id == old('category_id', $post->category->id
+                  ) ? 'selected'  : '' }}>{{$category->name}}
+                  </option>
+
+                  @endforeach
+
+
+                </select>
+                @error('category_id')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+              </div>
             <div class="p-2">
                 <h5>Content:</h5>
                 <input  class="py-2 px-3 w-100 form-control @error('content') is-invalid @enderror" type="text" id="content" name="content" placeholder="inserisci la descrizione" value="{{old('content',  $post->content)}}" required>
